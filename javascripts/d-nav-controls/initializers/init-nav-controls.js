@@ -11,32 +11,22 @@ export default {
       let lastScrollTop = 0;
       const scrollMax = 30;
       const hiddenNavControlsClass = "nav-controls-hidden";
-      const scrollCallback = (() => {
-        const scrollTop = window.scrollY;
-        const body = document.body;
-        if (
-          lastScrollTop < scrollTop &&
-          scrollTop > scrollMax &&
-          !body.classList.contains(hiddenNavControlsClass)
-        ) {
-          body.classList.add(hiddenNavControlsClass);
-        } else if (
-          lastScrollTop > scrollTop &&
-          body.classList.contains(hiddenNavControlsClass)
-        ) {
-          body.classList.remove(hiddenNavControlsClass);
-        }
-        lastScrollTop = scrollTop;
-      });
-      didInsertElement() {
-        this._super(...arguments);
-        document.addEventListener("scroll", scrollCallback);
-      },
 
-      willDestroyElement() {
-        this._super(...arguments);
-        document.removeEventListener("scroll", scrollCallback);
-      },
+      const scrollTop = window.scrollY;
+      const body = document.body;
+      if (
+        lastScrollTop < scrollTop &&
+        scrollTop > scrollMax &&
+        !body.classList.contains(hiddenNavControlsClass)
+      ) {
+        body.classList.add(hiddenNavControlsClass);
+      } else if (
+        lastScrollTop > scrollTop &&
+        body.classList.contains(hiddenNavControlsClass)
+      ) {
+        body.classList.remove(hiddenNavControlsClass);
+      }
+      lastScrollTop = scrollTop;
     });
   },
 };
