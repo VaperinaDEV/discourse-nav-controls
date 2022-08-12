@@ -16,7 +16,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
   .list-controls {
     .navigation-container .navigation-controls {
       position: fixed;
-      bottom: 0.5em !important;
+      bottom: 0.5em;
       left: 1em;
       max-width: calc(100% - 4em);
       width: 100%;
@@ -31,7 +31,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
         position: relative;
       }
       .tab-bar-hidden & {
-        bottom: -$bar-height - 1px !important;
+        bottom: -$bar-height - 1px;
         transition: all 0.2s ease-in;
       }
     }
