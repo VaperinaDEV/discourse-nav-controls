@@ -5,7 +5,8 @@ export default {
 
   initialize(container) {
     withPluginApi("0.8.13", (api) => {
-
+      const site = api.container.lookup("service:site");
+      if (!site.mobileView) return;
       
       let lastScrollTop = 0;
       const scrollMax = 30;
