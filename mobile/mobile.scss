@@ -18,7 +18,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       position: fixed;
       bottom: 0.5em !important;
       left: 1em;
-      width: calc(100% - 4em);
+      max-width: calc(100% - 4em);
       border-radius: 5em;
       padding: 1em;
       box-shadow: shadow("card");
@@ -28,6 +28,10 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       .notifications-button {
         bottom: 0;
         position: relative;
+      }
+      .tab-bar-hidden & {
+        bottom: -$bar-height - 1px;
+        transition: all 0.2s ease-in;
       }
     }
   }
@@ -112,7 +116,7 @@ body.tab-bar-hidden {
 .d-tab-bar {
   background-color: var(--secondary);
   transition: all 0.2s ease-out;
-  width: calc(100% - 4em);
+  max-width: calc(100% - 4em);
   height: $bar-height;
   position: fixed;
   bottom: 0.5em;
