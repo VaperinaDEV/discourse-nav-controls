@@ -7,6 +7,9 @@ export default {
     withPluginApi("0.8.13", (api) => {
       const site = api.container.lookup("site:main");
       if (!site.mobileView) return;
+      
+      document.addEventListener("scroll", scrollCallback);
+      document.removeEventListener("scroll", scrollCallback);
           
       const scrollCallback = (() => {
         let lastScrollTop = 0;
@@ -21,13 +24,11 @@ export default {
           !body.classList.contains(hiddenNavControlsClass)
         ) {
           body.classList.add(hiddenNavControlsClass);
-          document.addEventListener("scroll", scrollCallback);
         } else if (
           lastScrollTop > scrollTop &&
           body.classList.contains(hiddenNavControlsClass)
         ) {
           body.classList.remove(hiddenNavControlsClass);
-          document.removeEventListener("scroll", scrollCallback);
         }
         lastScrollTop = scrollTop;
       });
