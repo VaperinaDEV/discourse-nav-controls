@@ -35,10 +35,15 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
 }
 
 body.tab-bar-hidden {
-  .list-controls {
-    .navigation-container .navigation-controls {
-      bottom: -$bar-height - 1px !important;
-      transition: all 0.2s ease-in;
+  &.navigation-topics,
+  &.categories-list,
+  &.tags-page,
+  &[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
+    .list-controls {
+      .navigation-container .navigation-controls {
+        bottom: -$bar-height - 1px !important;
+        transition: all 0.2s ease-in;
+      }
     }
   }
 }
