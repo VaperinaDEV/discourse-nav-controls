@@ -8,7 +8,7 @@ export default {
       const site = api.container.lookup("site:main");
       if (!site.mobileView) return;
           
-      const scrollCallback = (() => {
+      function scrollCallback = (() => {
         let lastScrollTop = 0;
         const scrollMax = 30;
         const hiddenNavControlsClass = "nav-controls-hidden";
