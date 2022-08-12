@@ -7,9 +7,6 @@ export default {
     withPluginApi("0.8.13", (api) => {
       const site = api.container.lookup("site:main");
       if (!site.mobileView) return;
-      
-      document.addEventListener("scroll", scrollCallback);
-      document.removeEventListener("scroll", scrollCallback);
           
       const scrollCallback = (() => {
         let lastScrollTop = 0;
@@ -32,6 +29,8 @@ export default {
         }
         lastScrollTop = scrollTop;
       });
+      document.addEventListener("scroll", scrollCallback);
+      document.removeEventListener("scroll", scrollCallback);
     });
   },
 };
