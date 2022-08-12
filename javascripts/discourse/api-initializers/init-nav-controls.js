@@ -27,7 +27,7 @@ export default {
             body.classList.remove(hiddenNavControlsClass);
           }
           lastScrollTop = scrollTop;
-        }).bind(this);
+        });
       };
     });
   },
