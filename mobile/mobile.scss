@@ -5,14 +5,14 @@ $bar-height: 49px;
 .before-create-topic-button-outlet.fkb-avatar {
   display: none;
 }
+.d-tab-bar {
+  display: none;
+}
 
 .navigation-topics,
 .categories-list,
 .tags-page,
 body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
-  .d-tab-bar {
-    display: none;
-  }
   .list-controls {
     .navigation-container .navigation-controls {
       position: fixed;
