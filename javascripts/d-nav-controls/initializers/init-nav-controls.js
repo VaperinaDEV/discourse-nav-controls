@@ -8,7 +8,7 @@ export default {
       const site = api.container.lookup("site:main");
       if (!site.mobileView) return;
           
-      function scrollCallback = (() => {
+      const scrollCallback = (() => {
         let lastScrollTop = 0;
         const scrollMax = 30;
         const hiddenNavControlsClass = "nav-controls-hidden";
@@ -29,8 +29,8 @@ export default {
         }
         lastScrollTop = scrollTop;
       });
-      document.addEventListener("scroll", scrollCallback);
-      document.removeEventListener("scroll", scrollCallback);
+      window.addEventListener("scroll", scrollCallback);
+      window.removeEventListener("scroll", scrollCallback);
     });
   },
 };
