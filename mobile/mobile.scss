@@ -112,6 +112,8 @@ body.tab-bar-hidden {
   height: $bar-height;
   position: fixed;
   bottom: 0.5em;
+  border-radius: 2em;
+  left: 2em;
   z-index: z("dropdown") - 1;
   padding-bottom: env(
     safe-area-inset-bottom
