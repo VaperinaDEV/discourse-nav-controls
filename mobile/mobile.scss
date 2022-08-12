@@ -1,0 +1,25 @@
+@media screen and (max-width: 600px) {
+  .navigation-topics,
+  .categories-list,
+  .tags-page,
+  body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
+    .list-controls {
+      .navigation-container .navigation-controls {
+        position: fixed;
+        bottom: 0.5em;
+        left: 1em;
+        max-width: calc(100% - 4em);
+        border-radius: 5em;
+        padding: 1em;
+        box-shadow: shadow("card");
+        background: var(--secondary);
+        transition: all 0.2s ease-in;
+        justify-content: center;
+        .notifications-button {
+          bottom: 0;
+          position: relative;
+        }
+      }
+    }
+  }
+}
