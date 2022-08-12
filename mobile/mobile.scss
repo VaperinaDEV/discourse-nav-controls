@@ -1,28 +1,208 @@
-@media screen and (max-width: 600px) {
-  .before-create-topic-button-outlet.fkb-avatar {
+@import "common/foundation/variables";
+
+$bar-height: 49px;
+
+.navigation-topics,
+.categories-list,
+.tags-page,
+body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
+  .d-tab-bar {
     display: none;
   }
-  .navigation-topics,
-  .categories-list,
-  .tags-page,
-  body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
-    .list-controls {
-      .navigation-container .navigation-controls {
-        position: fixed;
-        bottom: 0.5em !important;
-        left: 1em;
-        max-width: calc(100% - 4em);
-        border-radius: 5em;
-        padding: 1em;
-        box-shadow: shadow("card");
-        background: var(--secondary);
-        transition: all 0.2s ease-in;
-        justify-content: center;
-        .notifications-button {
-          bottom: 0;
-          position: relative;
+  .list-controls {
+    .navigation-container .navigation-controls {
+      position: fixed;
+      bottom: 0.5em !important;
+      left: 1em;
+      max-width: calc(100% - 4em);
+      border-radius: 5em;
+      padding: 1em;
+      box-shadow: shadow("card");
+      background: var(--secondary);
+      transition: all 0.2s ease-in;
+      justify-content: center;
+      .notifications-button {
+        bottom: 0;
+        position: relative;
+      }
+    }
+  }
+}
+
+html:not(.anon) {
+
+  #topic-progress-wrapper:not(.docked),
+  .d-toc-toggle {
+    bottom: $bar-height + 1px;
+  }
+
+  #reply-control.draft {
+    margin-bottom: env(safe-area-inset-bottom);
+    padding-bottom: 0px;
+    transition: all 0.1s ease-out;
+    bottom: $bar-height + 1px;
+  }
+
+  .posts-filtered-notice {
+    transition: all 0.1s ease-out;
+    bottom: $bar-height + 1px;
+  }
+}
+
+body.footer-nav-ipad {
+  #main-outlet {
+    padding-bottom: $bar-height + 20px + 1px;
+  }
+
+  #topic-progress-wrapper:not(.docked),
+  .d-toc-toggle {
+    bottom: $bar-height + 20px + 1px;
+  }
+
+  #reply-control.draft {
+    bottom: $bar-height + 1px;
+  }
+
+  .posts-filtered-notice {
+    bottom: $bar-height + 20px + 1px;
+  }
+
+  &.tab-bar-hidden {
+    .d-tab-bar {
+      bottom: -$bar-height - 20px - 1px;
+    }
+
+    #reply-control.draft {
+      bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+}
+
+body.tab-bar-hidden {
+  .d-tab-bar {
+    bottom: -$bar-height - 1px;
+    transition: all 0.2s ease-in;
+  }
+
+  #topic-progress-wrapper:not(.docked),
+  .d-toc-toggle {
+    bottom: 0;
+    transition: all 0.2s ease-in;
+  }
+
+  #reply-control.draft {
+    margin-bottom: env(safe-area-inset-bottom);
+    bottom: 0;
+    padding-bottom: 0px;
+    transition: all 0.2s ease-in;
+  }
+
+  .posts-filtered-notice {
+    transition: all 0.2s ease-in;
+    bottom: 0;
+  }
+}
+
+.d-tab-bar {
+  background-color: var(--secondary);
+  transition: all 0.2s ease-out;
+  width: calc(100% - 4em);
+  height: $bar-height;
+  position: fixed;
+  bottom: 0.5em;
+  z-index: z("dropdown") - 1;
+  padding-bottom: env(
+    safe-area-inset-bottom
+  ); // for devices with a notch (iPhone X*)
+
+  .tab {
+    color: var(--secondary-low);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    float: left;
+
+    &.active {
+      position: relative;
+      color: var(--tertiary);
+      &:before {
+        content: '';
+        position: absolute;
+        width: 40%;
+        height: 5px;
+        top: 0;
+        border-radius: 0 0 10px 10px;
+        background: var(--tertiary);
+      }
+    }
+
+    p.title {
+      margin: 0;
+      font-size: 0.7em;
+    }
+
+    .fa {
+      font-size: #{$icons-size}em;
+      &.d-icon-stream,
+      &.d-icon-pen {
+        height: 0.9em;
+      }
+    }
+    &:nth-child(3) {
+      .d-icon {
+        width: $bar-height - 4px;
+        height: $bar-height - 4px;
+        background: var(--tertiary);
+        border-radius: 50px;
+        color: var(--vaperina-secondary);
+        > use {
+          transform: scale(0.5);
+          transform-origin: ($bar-height - 4px) / 2;
         }
       }
     }
+  }
+}
+
+body.user-follow-page {
+  .d-tab-bar {
+    .tab {
+      &.active {
+        color: var(--secondary-low);
+        &:before {
+          content: '';
+          background: none;
+        }
+      }
+      &[data-destination="/my/follow/feed"] {
+        position: relative;
+        color: var(--tertiary);
+        &:before {
+          content: '';
+          position: absolute;
+          width: 40%;
+          height: 5px;
+          top: 0;
+          border-radius: 0 0 10px 10px;
+          background: var(--tertiary);
+        }
+      }
+    }
+  }
+}
+
+body.footer-nav-visible {
+  #main-outlet {
+    padding-bottom: 0;
+  }
+  #topic-progress-wrapper:not(.docked) {
+    bottom: 0;
+  }
+  .d-toc-toggle {
+    bottom: 44px;
   }
 }

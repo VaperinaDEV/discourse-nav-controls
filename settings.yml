@@ -1,0 +1,35 @@
+display_icon_titles:
+  default: false
+  description:
+    en: "Display titles"
+
+icons_size:
+  default: 1.7
+  description:
+    en: "This setting changes the CSS font-size property of the icons (unit is em)"
+
+tab_1_settings:
+  default: "Főoldal, home, /"
+  description:
+    en: "Format is: <code>&lt;title&gt;, &lt;FA5 icon&gt;, &lt;relative url or route name&gt;, &lt;enabled? default true (optional)&gt;</code>"
+
+tab_2_settings:
+  default: "Aktivitás, stream, userActivity"
+
+tab_3_settings:
+  default: "Új téma, pen, /new-topic"
+
+tab_4_settings:
+  default: "Üzenetek, envelope, userPrivateMessages"
+
+tab_5_settings:
+  default: "Követési folyam, discourse-follow-new-reply, /my/follow/feed"
+
+tab_6_settings:
+  default: "Notifications, comment, userNotifications, false"
+
+extend_fa5_icons:
+  type: list
+  default: ""
+  description:
+    en: "Use this setting to add any icons you want to use that are not included in the default FA5 icons subset"
