@@ -7,26 +7,30 @@ export default {
     withPluginApi("0.8.13", (api) => {
       const site = api.container.lookup("site:main");
       if (!site.mobileView) return;
+          
+      const scrollCallback = (() => {
+        let lastScrollTop = 0;
+        const scrollMax = 30;
+        const hiddenNavControlsClass = "nav-controls-hidden";
 
-      let lastScrollTop = 0;
-      const scrollMax = 30;
-      const hiddenNavControlsClass = "nav-controls-hidden";
-
-      const scrollTop = window.scrollY;
-      const body = document.body;
-      if (
-        lastScrollTop < scrollTop &&
-        scrollTop > scrollMax &&
-        !body.classList.contains(hiddenNavControlsClass)
-      ) {
-        body.classList.add(hiddenNavControlsClass);
-      } else if (
-        lastScrollTop > scrollTop &&
-        body.classList.contains(hiddenNavControlsClass)
-      ) {
-        body.classList.remove(hiddenNavControlsClass);
-      }
-      lastScrollTop = scrollTop;
+        const scrollTop = window.scrollY;
+        const body = document.body;
+        if (
+          lastScrollTop < scrollTop &&
+          scrollTop > scrollMax &&
+          !body.classList.contains(hiddenNavControlsClass)
+        ) {
+          body.classList.add(hiddenNavControlsClass);
+          document.addEventListener("scroll", scrollCallback);
+        } else if (
+          lastScrollTop > scrollTop &&
+          body.classList.contains(hiddenNavControlsClass)
+        ) {
+          body.classList.remove(hiddenNavControlsClass);
+          document.removeEventListener("scroll", scrollCallback);
+        }
+        lastScrollTop = scrollTop;
+      });
     });
   },
 };
