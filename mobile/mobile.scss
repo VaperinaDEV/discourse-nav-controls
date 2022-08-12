@@ -1,4 +1,7 @@
 @media screen and (max-width: 600px) {
+  .before-create-topic-button-outlet.fkb-avatar {
+    display: none;
+  }
   .navigation-topics,
   .categories-list,
   .tags-page,
@@ -6,7 +9,7 @@
     .list-controls {
       .navigation-container .navigation-controls {
         position: fixed;
-        bottom: 0.5em;
+        bottom: 0.5em !important;
         left: 1em;
         max-width: calc(100% - 4em);
         border-radius: 5em;
