@@ -30,7 +30,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
         bottom: 0;
         position: relative;
       }
-      .tab-bar-hidden & {
+      &.tab-bar-hidden & {
         bottom: -$bar-height - 1px;
         transition: all 0.2s ease-in;
       }
