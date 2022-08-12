@@ -7,6 +7,7 @@ export default {
     withPluginApi("0.8.13", (api) => {
       const site = api.container.lookup("site:main");
       if (!site.mobileView) return;
+      const navControls = document.querySelector(".navigation-controls");
 
       let lastScrollTop = 0;
       const scrollMax = 30;
@@ -31,6 +32,7 @@ export default {
     });
 
     this.reopen({
+      navControls,
 
       didInsertElement() {
         this._super(...arguments);
