@@ -28,7 +28,7 @@ export default {
           }
           lastScrollTop = scrollTop;
         }).bind(this);
-      },
+      };
     });
   },
 };
