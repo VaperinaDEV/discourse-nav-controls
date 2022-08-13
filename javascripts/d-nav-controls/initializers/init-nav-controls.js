@@ -20,10 +20,7 @@ export default {
         !body.classList.contains(hiddenNavControlsClass)
       ) {
         body.classList.add(hiddenNavControlsClass);
-      } else (
-        lastScrollTop > scrollTop &&
-        body.classList.contains(hiddenNavControlsClass)
-      ) {
+      } else {
         body.classList.remove(hiddenNavControlsClass);
       }
       lastScrollTop = scrollTop;
