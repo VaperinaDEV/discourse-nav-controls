@@ -8,20 +8,31 @@ export default {
       const site = api.container.lookup("site:main");
       if (!site.mobileView) return;
             
-        let scrollpos = window.scrollY
+        let scrollTop = window.scrollY
         const body = document.body;
-        const header_height = 30;
+        const scrollMax = 30;
+        let lastScrollTop = 0;
+        const hiddenNavClass = "nav-controls-hidden";
 
-        const add_class_on_scroll = () => body.classList.add("fade-in")
-        const remove_class_on_scroll = () => body.classList.remove("fade-in")
+        const add_class_on_scroll = () => body.classList.add(hiddenNavClass)
+        const remove_class_on_scroll = () => body.classList.remove(hiddenNavClass)
 
         window.addEventListener('scroll', function() { 
-          scrollpos = window.scrollY;
+          scrollTop = window.scrollY;
 
-          if (scrollpos >= header_height) { add_class_on_scroll() }
-          else { remove_class_on_scroll() }
-
-          console.log(scrollpos)
+          if (
+            lastScrollTop < scrollTop &&
+            scrollTop > scrollMax &&
+            !body.classList.contains(hiddenNavClass)
+          ) { 
+              add_class_on_scroll() 
+          } else if (
+            lastScrollTop > scrollTop &&
+            body.classList.contains(hiddenNavClass)
+          ) { 
+             remove_class_on_scroll()
+          }
+          lastScrollTop = scrollTop;
         })
     });
   },
