@@ -14,7 +14,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       padding: 0.5em;
       box-shadow: shadow("card");
       background: var(--secondary);
-      transition: all 0.2s ease-in;
+      transition: bottom 0.2s ease-in;
       justify-content: center;
       align-items: center;
       #create-topic {
@@ -53,7 +53,7 @@ body.nav-controls-hidden {
     .list-controls {
       .navigation-container .navigation-controls {
         bottom: -70px;
-        transition: all 0.2s ease-in;
+        transition: bottom 0.2s ease-in;
       }
     }
   }
