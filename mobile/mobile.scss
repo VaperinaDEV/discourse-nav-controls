@@ -24,7 +24,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
         position: relative;
       }
       #create-topic {
-        background: var(--highlight);
+        background: var(--tertiary);
         color: #fff;
         justify-content: center;
         .d-icon {
@@ -41,7 +41,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       max-width: calc(100% - 6em);
       padding: 0.75em 1em;
       border-radius: 2em;
-      background: var(--highlight);
+      background: var(--tertiary);
       span {
         color: #fff;
       }
