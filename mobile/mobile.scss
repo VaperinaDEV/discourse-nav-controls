@@ -15,10 +15,6 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       background: var(--secondary);
       transition: all 0.2s ease-in;
       justify-content: center;
-      .notifications-button {
-        bottom: 0;
-        position: relative;
-      }
       #create-topic {
         background: var(--tertiary);
         color: #fff;
