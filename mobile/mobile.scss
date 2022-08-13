@@ -58,3 +58,7 @@ body.nav-controls-hidden {
     }
   }
 }
+
+body:not(.footer-nav-ipad) .footer-nav {
+  display: none;
+}
