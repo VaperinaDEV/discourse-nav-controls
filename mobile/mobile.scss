@@ -24,7 +24,12 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
         position: relative;
       }
       #create-topic {
+        background: var(--highlight);
+        color: #fff;
         justify-content: center;
+        .d-icon {
+          color: #fff;
+        }
       }
     }
   }
@@ -40,6 +45,23 @@ body.nav-controls-hidden {
         bottom: -70px !important;
         transition: all 0.2s ease-in;
       }
+    }
+  }
+}
+
+// Notification
+
+#list-area {
+  .alert-info,
+  .show-more.has-topics {
+    top: calc(var(--header-offset) + 0.5em);
+    z-index: 8;
+    max-width: calc(100% - 6em);
+    padding: 0.75em 1em;
+    border-radius: 2em;
+    background: var(--highlight);
+    span {
+      color: #fff;
     }
   }
 }
