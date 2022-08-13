@@ -24,8 +24,10 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
           color: #fff;
         }
       }
-      .anon &,
-      &:empty {
+      .anon & {
+        display: none;
+      }
+      button:empty {
         display: none;
       }
     }
