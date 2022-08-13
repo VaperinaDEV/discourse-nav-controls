@@ -8,32 +8,31 @@ export default {
       const site = api.container.lookup("site:main");
       if (!site.mobileView) return;
             
-        let scrollTop = window.scrollY
-        const body = document.body;
-        const scrollMax = 30;
-        let lastScrollTop = 0;
-        const hiddenNavClass = "nav-controls-hidden";
+      let scrollTop = window.scrollY
+      const body = document.body;
+      const scrollMax = 30;
+      let lastScrollTop = 0;
+      const hiddenNavClass = "nav-controls-hidden";
 
-        const add_class_on_scroll = () => body.classList.add(hiddenNavClass);
-        const remove_class_on_scroll = () => body.classList.remove(hiddenNavClass);
+      const add_class_on_scroll = () => body.classList.add(hiddenNavClass);
+      const remove_class_on_scroll = () => body.classList.remove(hiddenNavClass);
 
-        window.addEventListener('scroll', function() { 
-          scrollTop = window.scrollY;
-
-          if (
-            lastScrollTop < scrollTop &&
-            scrollTop > scrollMax &&
-            !body.classList.contains(hiddenNavClass)
-          ) { 
-            add_class_on_scroll();
-          } else if (
-            lastScrollTop > scrollTop &&
-            body.classList.contains(hiddenNavClass)
-          ) { 
-            remove_class_on_scroll();
-          }
-          lastScrollTop = scrollTop;
-        })
+      window.addEventListener('scroll', function() { 
+        scrollTop = window.scrollY;
+        if (
+          lastScrollTop < scrollTop &&
+          scrollTop > scrollMax &&
+          !body.classList.contains(hiddenNavClass)
+        ) { 
+          add_class_on_scroll();
+        } else if (
+          lastScrollTop > scrollTop &&
+          body.classList.contains(hiddenNavClass)
+        ) { 
+          remove_class_on_scroll();
+        }
+        lastScrollTop = scrollTop;
+      });
     });
   },
 };
