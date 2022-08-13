@@ -48,7 +48,7 @@ body.nav-controls-hidden {
   &[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
     .list-controls {
       .navigation-container .navigation-controls {
-        bottom: -70px !important;
+        bottom: -70px;
         transition: all 0.2s ease-in;
       }
     }
