@@ -7,11 +7,11 @@ export default {
     withPluginApi("0.8.13", (api) => {
       const site = api.container.lookup("site:main");
       if (!site.mobileView) return;
-           
+            
+      window.addEventListener('scroll', function() {
       let lastScrollTop = 0;
       const scrollMax = 30;
       const hiddenNavControlsClass = "nav-controls-hidden";
-
       const scrollTop = window.scrollY;
       const body = document.body;
       if (
@@ -19,18 +19,15 @@ export default {
         scrollTop > scrollMax &&
         !body.classList.contains(hiddenNavControlsClass)
       ) {
-        window.addEventListener('scroll', function() { 
-          body.classList.add(hiddenNavControlsClass);
-        });
+        body.classList.add(hiddenNavControlsClass);
       } else if (
         lastScrollTop > scrollTop &&
         body.classList.contains(hiddenNavControlsClass)
       ) {
-        window.removeEventListener('scroll', function() { 
-          body.classList.remove(hiddenNavControlsClass);
-        });
+        body.classList.remove(hiddenNavControlsClass);
       }
       lastScrollTop = scrollTop;
+      });
     });
   },
 };
