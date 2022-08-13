@@ -14,8 +14,8 @@ export default {
         let lastScrollTop = 0;
         const hiddenNavClass = "nav-controls-hidden";
 
-        const add_class_on_scroll = () => body.classList.add(hiddenNavClass)
-        const remove_class_on_scroll = () => body.classList.remove(hiddenNavClass)
+        const add_class_on_scroll = () => body.classList.add(hiddenNavClass);
+        const remove_class_on_scroll = () => body.classList.remove(hiddenNavClass);
 
         window.addEventListener('scroll', function() { 
           scrollTop = window.scrollY;
@@ -25,12 +25,12 @@ export default {
             scrollTop > scrollMax &&
             !body.classList.contains(hiddenNavClass)
           ) { 
-              add_class_on_scroll() 
+            add_class_on_scroll();
           } else if (
             lastScrollTop > scrollTop &&
             body.classList.contains(hiddenNavClass)
           ) { 
-             remove_class_on_scroll()
+            remove_class_on_scroll();
           }
           lastScrollTop = scrollTop;
         })
