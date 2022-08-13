@@ -10,7 +10,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       right: 1.5em;
       max-width: calc(100% - 4em);
       width: 100%;
-      border-radius: 5em;
+      border-radius: 2em;
       padding: 0.5em;
       box-shadow: shadow("card");
       background: var(--secondary);
