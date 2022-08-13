@@ -27,9 +27,6 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       .anon & {
         display: none;
       }
-      button:empty {
-        display: none;
-      }
     }
   }
   #list-area {
