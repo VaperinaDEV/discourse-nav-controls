@@ -39,6 +39,14 @@ body.nav-controls-hidden {
   }
 }
 
+#reply-control.draft {
+  bottom: -70px;
+  transition: bottom 0.2s ease-in;
+  body.nav-controls-hidden & {
+    bottom: 0;
+  }
+}
+
 body:not(.footer-nav-ipad) .footer-nav {
   display: none;
 }
