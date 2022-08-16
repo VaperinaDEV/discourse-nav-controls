@@ -23,6 +23,10 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       }
     }
   }
+  #reply-control.draft {
+    bottom: -70px;
+    transition: bottom 0.2s ease-in;
+  }
 }
 
 body.nav-controls-hidden {
@@ -36,14 +40,9 @@ body.nav-controls-hidden {
         transition: bottom 0.2s ease-in;
       }
     }
-  }
-}
-
-#reply-control.draft {
-  bottom: -70px;
-  transition: bottom 0.2s ease-in;
-  body.nav-controls-hidden & {
-    bottom: 0;
+    #reply-control.draft {
+      bottom: 0;
+    }
   }
 }
 
